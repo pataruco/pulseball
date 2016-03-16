@@ -26,4 +26,8 @@ describe("PULSEBALL", function() {
     expect(pulseball.rankingsTable).toEqual(initialRankingTable);
   });
 
+  it("should have an addMatch function", function(){
+    expect(pulseball.addMatch).toBeDefined();
+  });
+
 }); //end of describe

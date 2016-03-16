@@ -5,3 +5,7 @@ var PULSEBALL = function() {
 PULSEBALL.prototype.init = function(rankingJson){
   this.rankingsTable = rankingJson;
 };
+
+PULSEBALL.prototype.addMatch = function(match){
+
+};
