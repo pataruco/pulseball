@@ -64,7 +64,11 @@ describe("PULSEBALL", function() {
 
   it("should have a rankingIndex function to rank the index of each team", function(){
     expect(pulseball.rankingIndex).toBeDefined();
-  })
+  });
+
+  it("should have a function to know the value of the rate difference", function (){
+    expect(pulseball.rateDifference).toBeDefined();
+  });
 
   describe("PULSEBALL.addMatch", function(){
 
@@ -90,6 +94,13 @@ describe("PULSEBALL", function() {
       var team2RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team2Name);
       expect(team1RankingIndex).toEqual(3);
       expect(team2RankingIndex).toEqual(2);
+    });
+
+    it("should know the rate difference", function(){
+      var team1RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team1Name);
+      var team2RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team2Name);
+      var venue = "France";
+      expect(pulseball.rateDifference(team1RankingIndex, team2RankingIndex, venue)).toEqual(3.63);
     });
   });// end describe addMatch
 }); //end of describe

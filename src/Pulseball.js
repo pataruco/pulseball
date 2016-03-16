@@ -13,7 +13,9 @@ PULSEBALL.prototype.addMatch = function(match){
   this.teams(match);
   this.whereIsPlayed(match);
 
-  var team1Rating = this.rankingIndex(this.addMatch.team1Name);
+  var team1rankingIndex = this.rankingIndex(this.addMatch.team1Name);
+  var team2rankingIndex = this.rankingIndex(this.addMatch.team2Name);
+  var rankingDifference = this.rateDifference(team1rankingIndex, team2rankingIndex, venue);
 };
 
 PULSEBALL.prototype.teams = function(match){
@@ -39,5 +41,20 @@ PULSEBALL.prototype.rankingIndex = function ( team ) {
     if(this.rankingsTable[i].team.name === team){
       return i;
     };
+  };
+};
+
+PULSEBALL.prototype.rateDifference = function(team1Index, team2Index, venue){
+  var team1 = this.rankingsTable[team1Index];
+  var team2 = this.rankingsTable[team2Index];
+
+  if(team1.team.name === venue){
+    return Math.abs(parseFloat((( this.rankingsTable[team1Index].pts + 3) - (this.rankingsTable[team2Index].pts)).toFixed(2)));
+
+  } else if (team2.team.name === venue) {
+    return Math.abs(parseFloat(((this.rankingsTable[team1Index].pts) - (this.rankingsTable[team2Index].pts + 3)).toFixed(2)));
+
+  } else {
+    return Math.abs(parseFloat(((this.rankingsTable[team1Index].pts) - (this.rankingsTable[team2Index].pts)).toFixed(2)));
   };
 };
