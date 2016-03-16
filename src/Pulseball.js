@@ -7,11 +7,12 @@ PULSEBALL.prototype.init = function(rankingJson){
 };
 
 PULSEBALL.prototype.addMatch = function(match){
-  var  team1Name,
-       team2Name;
+  var  team1Name;
+  var  team2Name;
+  var  venue;
   this.teams(match);
-  var venue;
   this.whereIsPlayed(match);
+
 };
 
 PULSEBALL.prototype.teams = function(match){
@@ -30,4 +31,8 @@ PULSEBALL.prototype.teams = function(match){
 
 PULSEBALL.prototype.whereIsPlayed = function (match) {
   this.addMatch.venue = match.venue.country;
+};
+
+PULSEBALL.prototype.rankingIndex = function ( team ) {
+
 };

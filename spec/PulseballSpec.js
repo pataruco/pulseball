@@ -62,6 +62,10 @@ describe("PULSEBALL", function() {
     expect(pulseball.teams).toBeDefined();
   });
 
+  it("should have a rankingIndex function to rank the index of each team", function(){
+    expect(pulseball.rankingIndex).toBeDefined();
+  })
+
   describe("PULSEBALL.addMatch", function(){
     it("should pick names of the teams playing in a match", function(){
       pulseball.addMatch(sampleMatch);
@@ -76,10 +80,5 @@ describe("PULSEBALL", function() {
       expect(pulseball.addMatch.venue).toEqual("France");
       expect(pulseball.addMatch.venue).not.toContain("England");
     });
-  })// end describe addMatch
-
-
-
-
-
+  });// end describe addMatch
 }); //end of describe
