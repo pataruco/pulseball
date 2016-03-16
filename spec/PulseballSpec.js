@@ -67,8 +67,13 @@ describe("PULSEBALL", function() {
   })
 
   describe("PULSEBALL.addMatch", function(){
-    it("should pick names of the teams playing in a match", function(){
+
+    beforeEach(function(){
+      pulseball.init(initialRankingTable);
       pulseball.addMatch(sampleMatch);
+    });
+
+    it("should pick names of the teams playing in a match", function(){
       expect(pulseball.addMatch.team1Name).toEqual("England");
       expect(pulseball.addMatch.team2Name).toEqual("France");
       expect(pulseball.addMatch.team1Name).not.toContain("France");
@@ -76,9 +81,15 @@ describe("PULSEBALL", function() {
     });
 
     it("should pick the name of the country where the match is played", function(){
-      pulseball.addMatch(sampleMatch);
       expect(pulseball.addMatch.venue).toEqual("France");
       expect(pulseball.addMatch.venue).not.toContain("England");
+    });
+    //
+    it("should know the rank index for each team", function(){
+      var team1RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team1Name);
+      var team2RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team2Name);
+      expect(team1RankingIndex).toEqual(3);
+      expect(team2RankingIndex).toEqual(2);
     });
   });// end describe addMatch
 }); //end of describe

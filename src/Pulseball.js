@@ -13,6 +13,7 @@ PULSEBALL.prototype.addMatch = function(match){
   this.teams(match);
   this.whereIsPlayed(match);
 
+  var team1Rating = this.rankingIndex(this.addMatch.team1Name);
 };
 
 PULSEBALL.prototype.teams = function(match){
@@ -34,5 +35,9 @@ PULSEBALL.prototype.whereIsPlayed = function (match) {
 };
 
 PULSEBALL.prototype.rankingIndex = function ( team ) {
-
+  for (var i = 0; i < this.rankingsTable.length; i++) {
+    if(this.rankingsTable[i].team.name === team){
+      return i;
+    };
+  };
 };
