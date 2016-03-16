@@ -69,6 +69,14 @@ describe("PULSEBALL", function() {
     expect(pulseball.addMatch.team1Name).not.toContain("France");
     expect(pulseball.addMatch.team2Name).not.toContain("England");
   });
+  describe("PULSEBALL.addMatch", function(){
+    it("should pick names of the teams playing in a match", function(){
+      pulseball.addMatch(sampleMatch);
+      expect(pulseball.addMatch.team1Name).toEqual("England");
+      expect(pulseball.addMatch.team2Name).toEqual("France");
+      expect(pulseball.addMatch.team1Name).not.toContain("France");
+      expect(pulseball.addMatch.team2Name).not.toContain("England");
+    });
 
 
 
