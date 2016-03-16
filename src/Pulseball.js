@@ -10,6 +10,8 @@ PULSEBALL.prototype.addMatch = function(match){
   var  team1Name,
        team2Name;
   this.teams(match);
+  var venue;
+  this.whereIsPlayed(match);
 };
 
 PULSEBALL.prototype.teams = function(match){
@@ -24,4 +26,8 @@ PULSEBALL.prototype.teams = function(match){
           break;
       };
     };
+};
+
+PULSEBALL.prototype.whereIsPlayed = function (match) {
+  this.addMatch.venue = match.venue.country;
 };

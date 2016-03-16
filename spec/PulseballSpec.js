@@ -62,13 +62,6 @@ describe("PULSEBALL", function() {
     expect(pulseball.teams).toBeDefined();
   });
 
-  it("should pick names of the teams playing in a match", function(){
-    pulseball.addMatch(sampleMatch);
-    expect(pulseball.addMatch.team1Name).toEqual("England");
-    expect(pulseball.addMatch.team2Name).toEqual("France");
-    expect(pulseball.addMatch.team1Name).not.toContain("France");
-    expect(pulseball.addMatch.team2Name).not.toContain("England");
-  });
   describe("PULSEBALL.addMatch", function(){
     it("should pick names of the teams playing in a match", function(){
       pulseball.addMatch(sampleMatch);
@@ -77,6 +70,15 @@ describe("PULSEBALL", function() {
       expect(pulseball.addMatch.team1Name).not.toContain("France");
       expect(pulseball.addMatch.team2Name).not.toContain("England");
     });
+
+    it("should pick the name of the country where the match is played", function(){
+      pulseball.addMatch(sampleMatch);
+      expect(pulseball.addMatch.venue).toEqual("France");
+      expect(pulseball.addMatch.venue).not.toContain("England");
+    });
+  })// end describe addMatch
+
+
 
 
 
