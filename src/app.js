@@ -9,12 +9,24 @@ $(document).ready(function(){
     { "team": { "name": "Romania", "id": 24 }, "pos": 5, "pts": 43.50 }
   ];
 
+  var $table = $('#table');
+
   pulseball.init(initialRankingTable);
   console.log(pulseball.rankingsTable);
 
   $(window).on('load', renderTable(pulseball.rankingsTable));
 
   $('#new-match').on('submit', createNewMatch);
+
+  function renderTable(table){
+    table.forEach(function(team){
+      console.log(team);
+      $table.append(
+        '<tr><td>'+ team.pos + '</td><td>'+ team.team.name +'</td><td>'+ team.pts +'</td></tr>'
+      );
+    });
+  };
+
 
   function createNewMatch(e){
     e.preventDefault();
