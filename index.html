@@ -9,7 +9,62 @@
     <title>Pulseball League predictor</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <main>
+      <div class="container-fluid row">
+        <h1>Pulseball League match predictor</h1>
+      </div>
+      <div class="container-fluid row">
+        <section class="col-md-6 col-sm-12 col-xs-12">
+          <p>left</p>
+          <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Panel heading</div>
+
+            <!-- Table -->
+            <table class="table" id="table">
+              ...
+            </table>
+          </div>
+        </section>
+        <section class="col-md-6 col-sm-12 col-xs-12">
+          <form action="" id="new-match">
+            <div class="form-group">
+              <label for="team-1">Team 1</label><br>
+                <input type="radio" name="team-1" value="Australia">Australia
+                <input type="radio" name="team-1" value="New Zealand">New Zealand
+                <input type="radio" name="team-1" value="England">England
+                <input type="radio" name="team-1" value="France">France
+                <input type="radio" name="team-1" value="Romania">Romania
+            </div>
+            <div class="form-group">
+              <label for="team-2">Team 2</label><br>
+                <input type="radio" name="team-2" value="Australia">Australia
+                <input type="radio" name="team-2" value="New Zealand">New Zealand
+                <input type="radio" name="team-2" value="England">England
+                <input type="radio" name="team-2" value="France">France
+                <input type="radio" name="team-2" value="Romania">Romania
+            </div>
+            <div class="form-group">
+              <label for="host">Country where the match is played</label><br>
+                <input type="radio" name="host" value="Australia">Australia
+                <input type="radio" name="host" value="New Zealand">New Zealand
+                <input type="radio" name="host" value="England">England
+                <input type="radio" name="host" value="France">France
+                <input type="radio" name="host" value="Romania">Romania
+            </div>
+            <div class="form-group">
+              <label for="outcome">Country where the match is played</label><br>
+                <input type="radio" name="outcome" value="A">Team 1 wins
+                <input type="radio" name="outcome" value="B">Team 2 wins
+                <input type="radio" name="outcome" value="D">Draw
+            </div>
+            <div class="submit-button">
+              <input type="submit" class="btn btn-success btn-block" value="Add Match" id="add-match">
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
   </body>
   <script src="./lib/bootstrap/bootstrap.min.js" charset="utf-8"></script>
   <script src="./src/app.js" charset="utf-8"></script>
