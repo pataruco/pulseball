@@ -1,7 +1,8 @@
 describe("PULSEBALL", function() {
   var pulseball,
       sampleMatch,
-      initialRankingTable;
+      initialRankingTable,
+      RankingTableWith10Difference;
 
   beforeEach(function() {
     pulseball = new PULSEBALL();
@@ -73,6 +74,13 @@ describe("PULSEBALL", function() {
   describe("PULSEBALL.addMatch", function(){
 
     beforeEach(function(){
+      RankingTableWith10Difference = [
+        { "team": { "name": "Australia", "id": 32 }, "pos": 1, "pts": 54.23 },
+        { "team": { "name": "New Zealand", "id": 62 }, "pos": 2, "pts": 54.00 },
+        { "team": { "name": "France", "id": 2 }, "pos": 3, "pts": 52.95 },
+        { "team": { "name": "England", "id": 1 }, "pos": 4, "pts": 15.00 },
+        { "team": { "name": "Romania", "id": 24 }, "pos": 5, "pts": 12.00 }
+      ];
       pulseball.init(initialRankingTable);
       pulseball.addMatch(sampleMatch);
     });
@@ -102,5 +110,17 @@ describe("PULSEBALL", function() {
       var venue = "France";
       expect(pulseball.rateDifference(team1RankingIndex, team2RankingIndex, venue)).toEqual(3.63);
     });
+
+    it("should cap to 10 when rating difference is greater than 10", function(){
+      pulseball.init(RankingTableWith10Difference);
+      pulseball.addMatch(sampleMatch);
+      var team1RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team1Name);
+      var team2RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team2Name);
+      var venue = "France";
+      pulseball.rateDifference(team1RankingIndex, team2RankingIndex, venue);
+      expect(pulseball.addMatch.rankingDifference).toEqual(10);
+    });
+
+
   });// end describe addMatch
 }); //end of describe

@@ -16,6 +16,8 @@ PULSEBALL.prototype.addMatch = function(match){
   var team1rankingIndex = this.rankingIndex(this.addMatch.team1Name);
   var team2rankingIndex = this.rankingIndex(this.addMatch.team2Name);
   var rankingDifference = this.rateDifference(team1rankingIndex, team2rankingIndex, venue);
+
+  this.checkRankingDifference(rankingDifference);
 };
 
 PULSEBALL.prototype.teams = function(match){
@@ -56,5 +58,13 @@ PULSEBALL.prototype.rateDifference = function(team1Index, team2Index, venue){
 
   } else {
     return Math.abs(parseFloat(((this.rankingsTable[team1Index].pts) - (this.rankingsTable[team2Index].pts)).toFixed(2)));
+  };
+};
+
+PULSEBALL.prototype.checkRankingDifference = function (RankingDifference) {
+  if (RankingDifference >= 10 ){
+    return this.addMatch.rankingDifference = 10
+  } else {
+    this.addMatch.rankingDifference
   };
 };
