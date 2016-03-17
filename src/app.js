@@ -63,5 +63,4 @@ $(document).ready(function(){
     $table.empty();
     renderTable(pulseball.rankingsTable);
   };
-
 }); //end of document
