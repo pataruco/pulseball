@@ -20,7 +20,7 @@ $(document).ready(function(){
   function renderTable(table){
     table.forEach(function(team){
       $table.append(
-        '<tr><td>'+ team.pos + '</td><td>'+ team.team.name +'</td><td>'+ team.pts.toFixed(2) +'</td></tr>'
+        '<tr class="animated slideInLeft"><td>'+ team.pos + '</td><td>'+ team.team.name +'</td><td>'+ team.pts.toFixed(2) +'</td></tr>'
       );
     });
   };
