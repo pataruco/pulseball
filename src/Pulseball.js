@@ -25,10 +25,10 @@ PULSEBALL.prototype.teams = function(match){
     for (var i = 0; i < teams.length; i++) {
       switch (teams[i].id) {
         case 1:
-          this.addMatch.team1Name = teams[i].name;
+          this.addMatch.team2Name = teams[i].name;
           break;
         case 2:
-          this.addMatch.team2Name = teams[i].name;
+          this.addMatch.team1Name = teams[i].name;
           break;
       };
     };
