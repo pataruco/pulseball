@@ -63,8 +63,8 @@ PULSEBALL.prototype.rateDifference = function(team1Index, team2Index, venue){
 
 PULSEBALL.prototype.checkRankingDifference = function (RankingDifference) {
   if (RankingDifference >= 10 ){
-    return this.addMatch.rankingDifference = 10
+    return this.addMatch.rankingDifference = 10;
   } else {
-    this.addMatch.rankingDifference
+    this.addMatch.rankingDifference;
   };
 };
