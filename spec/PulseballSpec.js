@@ -2,7 +2,9 @@ describe("PULSEBALL", function() {
   var pulseball,
       sampleMatch,
       initialRankingTable,
-      RankingTableWith10Difference;
+      finalRankingTable,
+      unsortedFinalRankingTable,
+      tableGreaterPlusTen;
 
   beforeEach(function() {
     pulseball = new PULSEBALL();
@@ -74,13 +76,30 @@ describe("PULSEBALL", function() {
   describe("PULSEBALL.addMatch", function(){
 
     beforeEach(function(){
-      RankingTableWith10Difference = [
+      tableGreaterPlusTen = [
         { "team": { "name": "Australia", "id": 32 }, "pos": 1, "pts": 54.23 },
         { "team": { "name": "New Zealand", "id": 62 }, "pos": 2, "pts": 54.00 },
         { "team": { "name": "France", "id": 2 }, "pos": 3, "pts": 52.95 },
         { "team": { "name": "England", "id": 1 }, "pos": 4, "pts": 15.00 },
         { "team": { "name": "Romania", "id": 24 }, "pos": 5, "pts": 12.00 }
       ];
+
+      finalRankingTable = [
+        { "team": { "name": "Australia", "id": 32 }, "pos": 1, "pts": 54.23 },
+        { "team": { "name": "New Zealand", "id": 62 }, "pos": 2, "pts": 54.00 },
+        { "team": { "name": "England", "id": 1 }, "pos": 4, "pts": 53.68 },
+        { "team": { "name": "France", "id": 2 }, "pos": 3, "pts": 51.59 },
+        { "team": { "name": "Romania", "id": 24 }, "pos": 5, "pts": 43.50 }
+      ];
+
+      unsortedFinalRankingTable = [
+        { team: { name: 'Australia', id: 32 }, pos: 1, pts: 54.23 },
+        { team: { name: 'New Zealand', id: 62 }, pos: 2, pts: 54 },
+        { team: { name: 'France', id: 2 }, pos: 3, pts: 51.59 },
+        { team: { name: 'England', id: 1 }, pos: 4, pts: 53.68 },
+        { team: { name: 'Romania', id: 24 }, pos: 5, pts: 43.5 }
+      ];
+
       pulseball.init(initialRankingTable);
       pulseball.addMatch(sampleMatch);
     });
@@ -96,7 +115,7 @@ describe("PULSEBALL", function() {
       expect(pulseball.addMatch.venue).toEqual("France");
       expect(pulseball.addMatch.venue).not.toContain("England");
     });
-    //
+
     it("should know the rank index for each team", function(){
       var team1RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team1Name);
       var team2RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team2Name);
@@ -112,7 +131,7 @@ describe("PULSEBALL", function() {
     });
 
     it("should cap to 10 when rating difference is greater than 10", function(){
-      pulseball.init(RankingTableWith10Difference);
+      pulseball.init(tableGreaterPlusTen);
       pulseball.addMatch(sampleMatch);
       var team1RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team1Name);
       var team2RankingIndex = pulseball.rankingIndex(pulseball.addMatch.team2Name);
@@ -125,6 +144,8 @@ describe("PULSEBALL", function() {
       expect(pulseball.addMatch.outcome).toEqual("B");
     });
 
-
+    it("should change the points of the teams after a match is added", function(){
+      expect(pulseball.rankingsTable).toEqual(unsortedFinalRankingTable);
+    });
   });// end describe addMatch
 }); //end of describe

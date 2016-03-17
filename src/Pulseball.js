@@ -51,9 +51,11 @@ PULSEBALL.prototype.rateDifference = function(team1Index, team2Index, venue){
     return Math.abs(parseFloat((( this.rankingsTable[team1Index].pts + 3) - (this.rankingsTable[team2Index].pts)).toFixed(2)));
 
   } else if (team2.team.name === venue) {
+
     return Math.abs(parseFloat(((this.rankingsTable[team1Index].pts) - (this.rankingsTable[team2Index].pts + 3)).toFixed(2)));
 
   } else {
+
     return Math.abs(parseFloat(((this.rankingsTable[team1Index].pts) - (this.rankingsTable[team2Index].pts)).toFixed(2)));
   };
 };
@@ -61,6 +63,10 @@ PULSEBALL.prototype.rateDifference = function(team1Index, team2Index, venue){
 PULSEBALL.prototype.checkRankingDifference = function (rankingDifference) {
   if (rankingDifference >= 10 ){
     return this.addMatch.rankingDifference = 10;
+
+  } else if (rankingDifference <= 10) {
+    return this.addMatch.rankingDifference = -10;
+
   } else {
     this.addMatch.rankingDifference;
   };
