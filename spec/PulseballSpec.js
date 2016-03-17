@@ -139,13 +139,30 @@ describe("PULSEBALL", function() {
       pulseball.rateDifference(team1RankingIndex, team2RankingIndex, venue);
       expect(pulseball.addMatch.rankingDifference).toEqual(10);
     });
+  });// end describe addMatch
+
+  describe("PULSEBALL after a match is added", function () {
 
     it("should know the outcome of the match", function () {
       expect(pulseball.addMatch.outcome).toEqual("B");
+    beforeEach(function () {
+      pulseball.init(initialRankingTable);
+      pulseball.addMatch(sampleMatch);
+      finalRankingTable = [
+        { team: { name: 'Australia', id: 32 }, pos: 1, pts: 54.23 },
+        { team: { name: 'New Zealand', id: 62 }, pos: 2, pts: 54 },
+        { team: { name: 'England', id: 1 }, pos: 3, pts: 53.68 },
+        { team: { name: 'France', id: 2 }, pos: 4, pts: 51.59 },
+        { team: { name: 'Romania', id: 24 }, pos: 5, pts: 43.5 }
+      ];
     });
 
     it("should change the points of the teams after a match is added", function(){
       expect(pulseball.rankingsTable).toEqual(unsortedFinalRankingTable);
+    it("It change the order of the array by pts", function () {
+      expect(pulseball.rankingsTable).toEqual(finalRankingTable);
     });
   });// end describe addMatch
+    
+  }); //PULSEBALL after
 }); //end of describe
