@@ -121,6 +121,10 @@ describe("PULSEBALL", function() {
       expect(pulseball.addMatch.rankingDifference).toEqual(10);
     });
 
+    it("should know the outcome of the match", function () {
+      expect(pulseball.addMatch.outcome).toEqual("B");
+    });
+
 
   });// end describe addMatch
 }); //end of describe

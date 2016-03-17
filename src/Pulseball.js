@@ -18,6 +18,8 @@ PULSEBALL.prototype.addMatch = function(match){
   var rankingDifference = this.rateDifference(team1rankingIndex, team2rankingIndex, venue);
 
   this.checkRankingDifference(rankingDifference);
+
+  var outcome = this.matchOutcome(match);
 };
 
 PULSEBALL.prototype.teams = function(match){
@@ -67,4 +69,8 @@ PULSEBALL.prototype.checkRankingDifference = function (RankingDifference) {
   } else {
     this.addMatch.rankingDifference;
   };
+};
+
+PULSEBALL.prototype.matchOutcome = function (match) {
+  this.addMatch.outcome = match.outcome;
 };
