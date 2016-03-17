@@ -10,6 +10,7 @@ PULSEBALL.prototype.addMatch = function(match){
   var  team1Name;
   var  team2Name;
   var  venue = match.venue.country;
+  var  outcome = match.outcome;
   this.teams(match);
   var team1rankingIndex = this.rankingIndex(this.addMatch.team1Name);
   var team2rankingIndex = this.rankingIndex(this.addMatch.team2Name);
@@ -17,7 +18,6 @@ PULSEBALL.prototype.addMatch = function(match){
 
   this.checkRankingDifference(rankingDifference);
 
-  var outcome = this.matchOutcome(match);
 };
 
 PULSEBALL.prototype.teams = function(match){
@@ -65,6 +65,4 @@ PULSEBALL.prototype.checkRankingDifference = function (RankingDifference) {
   };
 };
 
-PULSEBALL.prototype.matchOutcome = function (match) {
-  this.addMatch.outcome = match.outcome;
 };
