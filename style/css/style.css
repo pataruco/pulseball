@@ -1,3 +1,116 @@
-/*body {
-  background-color: red;
-}*/
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+:root {
+  font-size: 16px; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+.page {
+  height: 100vh; }
+
+.land section {
+  display: inline-block;
+  width: 49vw; }
+  .land section:first-child {
+    text-align: right; }
+  .land section:last-child {
+    text-align: left; }
+
+.logo {
+  display: inline-block;
+  width: 8em;
+  height: 8em;
+  border-radius: 4em; }
+  .logo.left {
+    background-color: rgba(225, 46, 50, 0.6); }
+  .logo.right {
+    background-color: rgba(0, 133, 201, 0.6);
+    margin-left: -3em; }
+
+.brand {
+  font-family: sans-serif;
+  font-size: 5rem;
+  line-height: 4em; }
+  .brand.left {
+    font-weight: 600; }
+  .brand.right {
+    font-weight: 300; }
+
+.titles h1, .titles h2 {
+  margin: 0 auto;
+  text-align: center; }
+.titles h1 {
+  font-size: 2.2rem; }
+  .titles h1 span:first-child {
+    font-weight: 600; }
+  .titles h1 span:last-child {
+    font-weight: 300; }
+
+.table-form-wrapper {
+  font-size: 1.4rem;
+  background-color: white; }
+
+.col-6 {
+  display: inline-block;
+  width: 49vw;
+  vertical-align: top;
+  padding: 1em; }
+
+.table td, .table th {
+  border: 1px solid #888888;
+  padding: 0.5em; }
+.table td {
+  color: #888888; }
+
+.form {
+  color: #888888; }
+  .form label {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 2em;
+    color: black; }
+  .form div {
+    padding: 0.3rem; }
+  .form input[type='radio'] {
+    -webkit-appearance: none;
+    width: 1em;
+    height: 1em;
+    border: 1px solid black;
+    border-radius: 50%;
+    outline: none;
+    vertical-align: middle; }
+    .form input[type='radio']:checked, .form input[type='radio']:before {
+      background-color: rgba(225, 46, 50, 0.6); }
+
+.teams div {
+  display: inline-block;
+  width: 49%; }
+
+.submit {
+  text-align: right; }
+  .submit input[type='submit'] {
+    background-color: rgba(0, 133, 201, 0.6);
+    color: white;
+    border: 1px solid rgba(0, 133, 201, 0.6);
+    outline: none;
+    border-radius: 0.1em;
+    padding: .35em; }
+    .submit input[type='submit']:active {
+      background-color: rgba(225, 46, 50, 0.6);
+      color: white;
+      border: 1px solid rgba(225, 46, 50, 0.6); }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+​
+.clearfix:after {
+  clear: both; }
+
+/*# sourceMappingURL=style.css.map */

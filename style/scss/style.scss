@@ -1,0 +1,165 @@
+/////////////
+//reset
+////////////
+* {
+  box-sizing: border-box;
+}
+:root {
+  font-size: 16px;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+/////////////
+//Variables
+////////////
+$pulse-blue: rgba(0, 133, 201, .6);
+$pulse-red: rgba(225, 46, 50, .6);
+$content-color: rgba(136, 136, 136, 1.0);
+/////////////
+//Global
+////////////
+.page {
+  height: 100vh;
+}
+
+.land {
+  section {
+    display:inline-block;
+    width: 49vw;
+    &:first-child {
+      text-align: right;
+    }
+    &:last-child {
+      text-align: left;
+    }
+  }
+}
+
+.logo {
+  display:inline-block;
+  width: 8em;
+  height: 8em;
+  border-radius: 4em;
+  &.left {
+    background-color: $pulse-red;
+  }
+  &.right {
+    background-color: $pulse-blue;
+    margin-left: -3em;
+  }
+}
+
+.brand {
+  font-family: sans-serif;
+  font-size: 5rem;
+  line-height: 4em;
+  &.left {
+    font-weight: 600;
+  }
+  &.right {
+    font-weight: 300;
+  }
+}
+
+.titles {
+  h1,h2{
+    margin:0 auto;
+    text-align: center;
+  }
+  h1 {
+    font-size: 2.2rem;
+    span{
+      &:first-child{
+        font-weight: 600;
+      }
+      &:last-child{
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.table-form-wrapper {
+  font-size: 1.4rem;
+  background-color: rgba(255, 255, 255, 1.0)
+}
+
+.col-6 {
+  display: inline-block;
+  width: 49vw;
+  vertical-align: top;
+  padding: 1em;
+}
+
+.table {
+  td, th {
+    border: 1px solid $content-color;
+    padding: 0.5em;
+  }
+  td {
+    color: $content-color;
+  }
+}
+
+.form {
+  color: $content-color;
+  label {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 2em;
+    color: black;
+  }
+  div{
+    padding: 0.3rem;
+  }
+  input[type='radio']{
+    -webkit-appearance:none;
+    width: 1em;
+    height: 1em;
+    border:1px solid black;
+    border-radius:50%;
+    outline:none;
+    // box-shadow:0 0 5px 0px gray inset;
+    vertical-align: middle;
+    &:checked,&:before {
+      background-color: $pulse-red;
+    }
+  }
+}
+
+.teams {
+  div {
+    display:inline-block;
+    width: 49%;
+  }
+}
+
+.submit {
+  text-align: right;
+  input[type='submit']{
+    background-color: $pulse-blue;
+    color: white;
+    border: 1px solid $pulse-blue;
+    outline: none;
+    border-radius: 0.1em;
+    padding: .35em;
+    &:active {
+      background-color: $pulse-red;
+      color: white;
+      border: 1px solid $pulse-red;
+    }
+  }
+}
+
+////Utils
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+​
+.clearfix:after {
+    clear: both;
+}

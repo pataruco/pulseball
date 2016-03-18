@@ -4,20 +4,31 @@
     <meta charset="utf-8">
       <script src="./lib/jQuery/jquery.js" charset="utf-8"></script>
       <script src="./src/Pulseball.js" charset="utf-8"></script>
-      <link rel="stylesheet" href="./lib/bootstrap/bootstrap.css" media="screen" title="no title" charset="utf-8">
+      <link rel="stylesheet" href="./lib/normalize/normalize.css" media="screen" title="no title" charset="utf-8">
       <link rel="stylesheet" href="./lib/animate/animate.css" media="screen" title="no title" charset="utf-8">
       <link rel="stylesheet" href="./style/css/style.css" media="screen" title="no title" charset="utf-8">
     <title>Pulseball League predictor</title>
   </head>
   <body>
     <main>
-      <div class="container-fluid row">
-        <h1>Pulseball League match predictor</h1>
+      <div class="page land">
+        <section class="animated bounceInLeft">
+          <span class="brand left">Pulse</span><br>
+          <div class="logo left"></div>
+        </section>
+        <section class="animated bounceInRight">
+          <span class="brand right animated slideInRight">ball</span><br>
+          <div class="logo right"></div>
+        </section>
       </div>
-      <div class="container-fluid row">
-        <section class="col-md-6 col-sm-12 col-xs-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">Pulseball League Ranking</div>
+      <div class="page predictor">
+        <div class="titles">
+          <h1><span>Pulse</span><span>ball</span> League</h1>
+          <h2>Match Predictor</h2>
+        </div>
+        <div class="table-form-wrapper">
+          <section class="col-6">
+            <h3 class="">Ranking</h3>
             <table class="table">
               <thead>
                 <th>Position</th>
@@ -26,50 +37,49 @@
               </thead>
               <tbody id="table"></tbody>
             </table>
-          </div>
-        </section>
-        <section class="col-md-6 col-sm-12 col-xs-12">
-          <form action="" id="new-match">
-            <div class="container">
-              <div class="form-group col-md-4">
-                <label for="team-1">Team 1</label><br>
-                <input type="radio" name="team-1" value="Australia"> Australia<br>
-                <input type="radio" name="team-1" value="New Zealand"> New Zealand<br>
-                <input type="radio" name="team-1" value="England"> England<br>
-                <input type="radio" name="team-1" value="France"> France<br>
-                <input type="radio" name="team-1" value="Romania"> Romania
+          </section>
+          <section class="col-6 form">
+            <form id="new-match">
+              <div class="teams">
+                <div>
+                  <label for="team-1">Team 1</label><br>
+                  <input type="radio" name="team-1" value="Australia"> Australia<br>
+                  <input type="radio" name="team-1" value="New Zealand" checked="true"> New Zealand<br>
+                  <input type="radio" name="team-1" value="England" checked="true"> England<br>
+                  <input type="radio" name="team-1" value="France"> France<br>
+                  <input type="radio" name="team-1" value="Romania"> Romania
+                </div>
+                <div>
+                  <label for="team-2">Team 2</label><br>
+                  <input type="radio" name="team-2" value="Australia" checked="true"> Australia<br>
+                  <input type="radio" name="team-2" value="New Zealand"> New Zealand<br>
+                  <input type="radio" name="team-2" value="England"> England<br>
+                  <input type="radio" name="team-2" value="France"> France<br>
+                  <input type="radio" name="team-2" value="Romania"> Romania
+                </div>
               </div>
-              <div class="form-group col-md-4">
-                <label for="team-2">Team 2</label><br>
-                <input type="radio" name="team-2" value="Australia"> Australia<br>
-                <input type="radio" name="team-2" value="New Zealand"> New Zealand<br>
-                <input type="radio" name="team-2" value="England"> England<br>
-                <input type="radio" name="team-2" value="France"> France<br>
-                <input type="radio" name="team-2" value="Romania"> Romania
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="venue">Country where the match is played</label><br>
-                <input type="radio" name="venue" value="Australia"> Australia<br>
+              <div>
+                <label for="venue">Country where the match is played</label><br>
+                <input type="radio" name="venue" value="Australia" checked="true"> Australia<br>
                 <input type="radio" name="venue" value="New Zealand"> New Zealand<br>
                 <input type="radio" name="venue" value="England"> England<br>
                 <input type="radio" name="venue" value="France"> France<br>
                 <input type="radio" name="venue" value="Romania"> Romania
-            </div>
-            <div class="form-group">
-              <label for="outcome">Result of the match</label><br>
+              </div>
+              <div>
+                <label for="outcome">Result of the match</label><br>
                 <input type="radio" name="outcome" value="A"> Team 1 wins<br>
-                <input type="radio" name="outcome" value="B"> Team 2 wins<br>
+                <input type="radio" name="outcome" value="B" checked="true"> Team 2 wins<br>
                 <input type="radio" name="outcome" value="D"> Draw
-            </div>
-            <div class="submit-button">
-              <input type="submit" class="btn btn-success btn-block" value="Add Match" id="add-match">
-            </div>
-          </form>
-        </section>
+              </div>
+              <div class="submit">
+                <input type="submit" value="Add Match" id="add-match">
+              </div>
+            </form>
+          </section>
+        </div>
       </div>
     </main>
   </body>
-  <script src="./lib/bootstrap/bootstrap.min.js" charset="utf-8"></script>
   <script src="./src/app.js" charset="utf-8"></script>
 </html>
