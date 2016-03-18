@@ -62,7 +62,42 @@ $pulse-red: rgba(225, 46, 50, .6);
   }
 }
 
+.titles {
+  background-color: lightblue;
+  h1,h2{
+    margin:0 auto;
+    text-align: center;
+  }
+  h1 {
+    span{
+      &:first-child{
+        font-weight: 600;
+      }
+      &:last-child{
+        font-weight: 300;
+      }
+    }
+  }
+}
 
+.table-form-wrapper {
+  background-color: lightyellow;
+  font-size: 1.4rem;
+}
+
+.col-6 {
+  display: inline-block;
+  width: 49vw;
+  vertical-align: top;
+  padding: 1em;
+}
+
+.table {
+  td, th {
+    border: 1px solid #999;
+    padding: 0.5em;
+  }
+}
 
 
 

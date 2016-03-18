@@ -40,6 +40,30 @@ html, body {
   .brand.right {
     font-weight: 300; }
 
+.titles {
+  background-color: lightblue; }
+  .titles h1, .titles h2 {
+    margin: 0 auto;
+    text-align: center; }
+  .titles h1 span:first-child {
+    font-weight: 600; }
+  .titles h1 span:last-child {
+    font-weight: 300; }
+
+.table-form-wrapper {
+  background-color: lightyellow;
+  font-size: 1.4rem; }
+
+.col-6 {
+  display: inline-block;
+  width: 49vw;
+  vertical-align: top;
+  padding: 1em; }
+
+.table td, .table th {
+  border: 1px solid #999;
+  padding: 0.5em; }
+
 .clearfix:before,
 .clearfix:after {
   content: " ";
