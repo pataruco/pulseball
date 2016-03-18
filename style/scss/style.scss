@@ -99,6 +99,47 @@ $pulse-red: rgba(225, 46, 50, .6);
   }
 }
 
+.form {
+  background-color: lightgreen;
+  label {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.2em;
+  }
+  div{
+    padding: 0.3rem;
+  }
+  input[type='radio']{
+    width: 1.1em;
+    height: 1.4em;
+    vertical-align: middle;
+  }
+}
+
+.teams {
+  div {
+    display:inline-block;
+    width: 49%;
+  }
+}
+
+.submit {
+  background-color: lightgrey;
+  text-align: right;
+  input[type='submit']{
+    background-color: $pulse-blue;
+    color: white;
+    border: 1px solid $pulse-blue;
+    outline: none;
+    border-radius: 0.1em;
+    &:active {
+      background-color: $pulse-red;
+      color: white;
+      border: 1px solid $pulse-red;
+    }
+  }
+}
+
 
 
 

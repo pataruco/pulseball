@@ -64,6 +64,37 @@ html, body {
   border: 1px solid #999;
   padding: 0.5em; }
 
+.form {
+  background-color: lightgreen; }
+  .form label {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.2em; }
+  .form div {
+    padding: 0.3rem; }
+  .form input[type='radio'] {
+    width: 1.1em;
+    height: 1.4em;
+    vertical-align: middle; }
+
+.teams div {
+  display: inline-block;
+  width: 49%; }
+
+.submit {
+  background-color: lightgrey;
+  text-align: right; }
+  .submit input[type='submit'] {
+    background-color: rgba(0, 133, 201, 0.6);
+    color: white;
+    border: 1px solid rgba(0, 133, 201, 0.6);
+    outline: none;
+    border-radius: 0.1em; }
+    .submit input[type='submit']:active {
+      background-color: rgba(225, 46, 50, 0.6);
+      color: white;
+      border: 1px solid rgba(225, 46, 50, 0.6); }
+
 .clearfix:before,
 .clearfix:after {
   content: " ";
