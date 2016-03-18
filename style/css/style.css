@@ -1,3 +1,52 @@
-/*body {
-  background-color: red;
-}*/
+@charset "UTF-8";
+.viewport-height {
+  height: 100vh; }
+
+.pulseball {
+  display: inline-block;
+  width: 49.999%; }
+
+.ball {
+  float: right; }
+
+.pulse {
+  float: left;
+  text-align: right; }
+
+.brand-title {
+  font-size: 4rem;
+  line-height: 40vh; }
+
+.logo {
+  width: 8em;
+  height: 8em;
+  border-radius: 4em; }
+
+.logo-right {
+  background-color: rgba(0, 133, 201, 0.6);
+  margin-left: -4rem;
+  margin-top: 2rem; }
+
+.logo-left {
+  background-color: rgba(225, 46, 50, 0.6);
+  display: inline-block; }
+
+.land {
+  vertical-align: middle; }
+
+.brand-title-left {
+  font-weight: 600; }
+
+.brand-title-right {
+  font-weight: 300; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+​
+.clearfix:after {
+  clear: both; }
+
+/*# sourceMappingURL=style.css.map */
