@@ -16,6 +16,7 @@ html,body{
 ////////////
 $pulse-blue: rgba(0, 133, 201, .6);
 $pulse-red: rgba(225, 46, 50, .6);
+$content-color: rgba(136, 136, 136, 1.0);
 /////////////
 //Global
 ////////////
@@ -63,12 +64,12 @@ $pulse-red: rgba(225, 46, 50, .6);
 }
 
 .titles {
-  background-color: lightblue;
   h1,h2{
     margin:0 auto;
     text-align: center;
   }
   h1 {
+    font-size: 2.2rem;
     span{
       &:first-child{
         font-weight: 600;
@@ -81,8 +82,8 @@ $pulse-red: rgba(225, 46, 50, .6);
 }
 
 .table-form-wrapper {
-  background-color: lightyellow;
   font-size: 1.4rem;
+  background-color: rgba(255, 255, 255, 1.0)
 }
 
 .col-6 {
@@ -94,25 +95,37 @@ $pulse-red: rgba(225, 46, 50, .6);
 
 .table {
   td, th {
-    border: 1px solid #999;
+    border: 1px solid $content-color;
     padding: 0.5em;
+  }
+  td {
+    color: $content-color;
   }
 }
 
 .form {
-  background-color: lightgreen;
+  color: $content-color;
   label {
     font-size: 1.2em;
     font-weight: 600;
-    line-height: 1.2em;
+    line-height: 2em;
+    color: black;
   }
   div{
     padding: 0.3rem;
   }
   input[type='radio']{
-    width: 1.1em;
-    height: 1.4em;
+    -webkit-appearance:none;
+    width: 1em;
+    height: 1em;
+    border:1px solid black;
+    border-radius:50%;
+    outline:none;
+    // box-shadow:0 0 5px 0px gray inset;
     vertical-align: middle;
+    &:checked,&:before {
+      background-color: $pulse-red;
+    }
   }
 }
 
@@ -124,7 +137,6 @@ $pulse-red: rgba(225, 46, 50, .6);
 }
 
 .submit {
-  background-color: lightgrey;
   text-align: right;
   input[type='submit']{
     background-color: $pulse-blue;
@@ -132,6 +144,7 @@ $pulse-red: rgba(225, 46, 50, .6);
     border: 1px solid $pulse-blue;
     outline: none;
     border-radius: 0.1em;
+    padding: .35em;
     &:active {
       background-color: $pulse-red;
       color: white;
@@ -139,9 +152,6 @@ $pulse-red: rgba(225, 46, 50, .6);
     }
   }
 }
-
-
-
 
 ////Utils
 .clearfix:before,

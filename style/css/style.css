@@ -40,19 +40,19 @@ html, body {
   .brand.right {
     font-weight: 300; }
 
-.titles {
-  background-color: lightblue; }
-  .titles h1, .titles h2 {
-    margin: 0 auto;
-    text-align: center; }
+.titles h1, .titles h2 {
+  margin: 0 auto;
+  text-align: center; }
+.titles h1 {
+  font-size: 2.2rem; }
   .titles h1 span:first-child {
     font-weight: 600; }
   .titles h1 span:last-child {
     font-weight: 300; }
 
 .table-form-wrapper {
-  background-color: lightyellow;
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  background-color: white; }
 
 .col-6 {
   display: inline-block;
@@ -61,35 +61,44 @@ html, body {
   padding: 1em; }
 
 .table td, .table th {
-  border: 1px solid #999;
+  border: 1px solid #888888;
   padding: 0.5em; }
+.table td {
+  color: #888888; }
 
 .form {
-  background-color: lightgreen; }
+  color: #888888; }
   .form label {
     font-size: 1.2em;
     font-weight: 600;
-    line-height: 1.2em; }
+    line-height: 2em;
+    color: black; }
   .form div {
     padding: 0.3rem; }
   .form input[type='radio'] {
-    width: 1.1em;
-    height: 1.4em;
+    -webkit-appearance: none;
+    width: 1em;
+    height: 1em;
+    border: 1px solid black;
+    border-radius: 50%;
+    outline: none;
     vertical-align: middle; }
+    .form input[type='radio']:checked, .form input[type='radio']:before {
+      background-color: rgba(225, 46, 50, 0.6); }
 
 .teams div {
   display: inline-block;
   width: 49%; }
 
 .submit {
-  background-color: lightgrey;
   text-align: right; }
   .submit input[type='submit'] {
     background-color: rgba(0, 133, 201, 0.6);
     color: white;
     border: 1px solid rgba(0, 133, 201, 0.6);
     outline: none;
-    border-radius: 0.1em; }
+    border-radius: 0.1em;
+    padding: .35em; }
     .submit input[type='submit']:active {
       background-color: rgba(225, 46, 50, 0.6);
       color: white;
