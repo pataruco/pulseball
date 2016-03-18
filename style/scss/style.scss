@@ -1,55 +1,71 @@
-.viewport-height {
+/////////////
+//reset
+////////////
+* {
+  box-sizing: border-box;
+}
+:root {
+  font-size: 16px;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+/////////////
+//Variables
+////////////
+$pulse-blue: rgba(0, 133, 201, .6);
+$pulse-red: rgba(225, 46, 50, .6);
+/////////////
+//Global
+////////////
+.page {
   height: 100vh;
 }
 
-.pulseball {
-  display:inline-block;
-  width: 49.999%;
-}
-
-.ball {
-  // background-color: red;
-  float: right;
-}
-
-.pulse {
-  // background-color: blue;
-  float: left;
-  text-align: right;
-}
-
-.brand-title {
-  font-size: 4rem;
-  line-height: 40vh;
+.land {
+  section {
+    display:inline-block;
+    width: 49vw;
+    &:first-child {
+      text-align: right;
+    }
+    &:last-child {
+      text-align: left;
+    }
+  }
 }
 
 .logo {
+  display:inline-block;
   width: 8em;
   height: 8em;
   border-radius: 4em;
+  &.left {
+    background-color: $pulse-red;
+  }
+  &.right {
+    background-color: $pulse-blue;
+    margin-left: -3em;
+  }
 }
 
-.logo-right {
-  background-color: rgba(0, 133, 201, .6);
-  margin-left: -4rem;
-  margin-top: 2rem;
+.brand {
+  font-family: sans-serif;
+  font-size: 5rem;
+  line-height: 4em;
+  &.left {
+    font-weight: 600;
+  }
+  &.right {
+    font-weight: 300;
+  }
 }
 
-.logo-left {
-  background-color: rgba(225, 46, 50, .6);
-  display: inline-block;
-}
 
-.land {
-  vertical-align: middle;
-}
 
-.brand-title-left {
-  font-weight: 600;
-}
-.brand-title-right {
-  font-weight: 300;
-}
+
+
 
 ////Utils
 .clearfix:before,
