@@ -1,4 +1,4 @@
-var PULSEBALL = function() {
+let PULSEBALL = function() {
   this.rankingsTable = null;
 };
 
@@ -7,14 +7,14 @@ PULSEBALL.prototype.init = function(rankingJson){
 };
 
 PULSEBALL.prototype.addMatch = function(match){
-  var  team1Name;
-  var  team2Name;
-  var  venue = match.venue.country;
-  var  outcome = match.outcome;
+  let  team1Name;
+  let  team2Name;
+  let  venue = match.venue.country;
+  let  outcome = match.outcome;
   this.teams(match);
-  var team1rankingIndex = this.rankingIndex(this.addMatch.team1Name);
-  var team2rankingIndex = this.rankingIndex(this.addMatch.team2Name);
-  var rankingDifference = this.rateDifference(team1rankingIndex, team2rankingIndex, venue);
+  let team1rankingIndex = this.rankingIndex(this.addMatch.team1Name);
+  let team2rankingIndex = this.rankingIndex(this.addMatch.team2Name);
+  let rankingDifference = this.rateDifference(team1rankingIndex, team2rankingIndex, venue);
 
   this.checkRankingDifference(rankingDifference);
 
@@ -24,8 +24,8 @@ PULSEBALL.prototype.addMatch = function(match){
 };
 
 PULSEBALL.prototype.teams = function(match){
-    var teams = match.teams;
-    for (var i = 0; i < teams.length; i++) {
+    let teams = match.teams;
+    for (let i = 0; i < teams.length; i++) {
       switch (teams[i].id) {
         case 1:
           this.addMatch.team2Name = teams[i].name;
@@ -38,7 +38,7 @@ PULSEBALL.prototype.teams = function(match){
 };
 
 PULSEBALL.prototype.rankingIndex = function ( team ) {
-  for (var i = 0; i < this.rankingsTable.length; i++) {
+  for (let i = 0; i < this.rankingsTable.length; i++) {
     if(this.rankingsTable[i].team.name === team){
       return i;
     };
@@ -46,8 +46,8 @@ PULSEBALL.prototype.rankingIndex = function ( team ) {
 };
 
 PULSEBALL.prototype.rateDifference = function(team1Index, team2Index, venue){
-  var team1 = this.rankingsTable[team1Index];
-  var team2 = this.rankingsTable[team2Index];
+  let team1 = this.rankingsTable[team1Index];
+  let team2 = this.rankingsTable[team2Index];
 
   if(team1.team.name === venue){
     return Math.abs(parseFloat((( this.rankingsTable[team1Index].pts + 3) - (this.rankingsTable[team2Index].pts)).toFixed(2)));
@@ -83,7 +83,7 @@ PULSEBALL.prototype.updateTeamScores = function (team1Index, team2Index, ranking
       break;
 
     case 'B':
-    var points = parseFloat((1 + ( rankingDifference / 10 )).toFixed(2));
+      var points = parseFloat((1 + ( rankingDifference / 10 )).toFixed(2));
       this.rankingsTable[team1Index].pts -= points;
       this.rankingsTable[team2Index].pts += points;
       break;
@@ -109,7 +109,7 @@ PULSEBALL.prototype.sortTable = function () {
         return parseFloat(a.pts).toFixed(2) - parseFloat(b.pts).toFixed(2);
   }).reverse();
   //then change positions
-  for (var i = 0; i < this.rankingsTable.length; i++) {
+  for (let i = 0; i < this.rankingsTable.length; i++) {
     this.rankingsTable[i].pos = i + 1;
   };
 };
