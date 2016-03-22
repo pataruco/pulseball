@@ -1,15 +1,15 @@
 $(document).ready(function(){
 
-  var pulseball = new PULSEBALL();
-  var initialRankingTable = [
+  let pulseball = new PULSEBALL();
+  const initialRankingTable = [
     { "team": { "name": "Australia", "id": 32 }, "pos": 1, "pts": 54.23 },
     { "team": { "name": "New Zealand", "id": 62 }, "pos": 2, "pts": 54.00 },
     { "team": { "name": "France", "id": 2 }, "pos": 3, "pts": 52.95 },
     { "team": { "name": "England", "id": 1 }, "pos": 4, "pts": 52.32 },
     { "team": { "name": "Romania", "id": 24 }, "pos": 5, "pts": 43.50 }
   ];
-  var match;
-  var $table = $('#table');
+  let match;
+  let $table = $('#table');
 
   pulseball.init(initialRankingTable);
 
@@ -20,7 +20,7 @@ $(document).ready(function(){
   function renderTable(table){
     table.forEach(function(team){
       $table.append(
-        '<tr class="animated fadeIn"><td>'+ team.pos + '</td><td>'+ team.team.name +'</td><td>'+ team.pts.toFixed(2) +'</td></tr>'
+        `<tr class="animated fadeIn"><td>${team.pos}</td><td>${team.team.name}</td><td>${team.pts.toFixed(2)}</td></tr>`
       );
     });
   };
@@ -28,10 +28,10 @@ $(document).ready(function(){
   function createNewMatch(e){
     e.preventDefault();
 
-    var team1 = $('#new-match input[name="team-1"]:checked').val();
-    var team2 = $('#new-match input[name="team-2"]:checked').val();
-    var venue = $('#new-match input[name="venue"]:checked').val();
-    var outcome = $('#new-match input[name="outcome"]:checked').val();
+    let team1 = $('#new-match input[name="team-1"]:checked').val();
+    let team2 = $('#new-match input[name="team-2"]:checked').val();
+    let venue = $('#new-match input[name="venue"]:checked').val();
+    let outcome = $('#new-match input[name="outcome"]:checked').val();
     match = { "matchId": 2524,
                     "description": "Match 2",
                     "venue": {
